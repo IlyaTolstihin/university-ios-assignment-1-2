@@ -11,10 +11,10 @@
 #import "TeacherProtocol.h"
 #import "ChangedMarkObserver.h"
 #import "Observable.h"
-#import "Department.h"
+@class Department;
 
 @interface Teacher : Human <TeacherProtocol, Observable>
 @property (nonatomic,strong,readonly)NSMutableArray* groups;
-@property (nonatomic,weak,readwrite)Department* department;
-@property (nonatomic,weak,readwrite)id<ChangedMarkObserver> observer;
+@property (nonatomic,weak)Department* department;
+@property (nonatomic,weak)id<ChangedMarkObserver> observer;
 @end

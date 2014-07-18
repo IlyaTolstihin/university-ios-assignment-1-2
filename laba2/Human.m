@@ -9,12 +9,11 @@
 #import "Human.h"
 
 @implementation Human
--(instancetype)initWithName:(NSString*)name andAge:(int)age{
+-(instancetype)initWithName:(NSString*)name age:(int)age{
     if( self = [super init] ){
         _name = name;
         _age = age;
-        return self;
     }
-    return nil;
+    return self;
 }
 @end

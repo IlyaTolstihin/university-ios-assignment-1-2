@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Department.h"
+@protocol TeacherProtocol;
+@class Department;
 
 @protocol ChangedMarkObserver <NSObject>
-- (void)changedMark: (Department *)department;
+- (void)markChangedByTeacher: (id<TeacherProtocol>)teacher inDepartment:(Department *)department;
 @end

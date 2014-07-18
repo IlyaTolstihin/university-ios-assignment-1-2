@@ -11,8 +11,8 @@
 #import "CalculateAverageMark.h"
 
 @interface Group : NSObject <CalculateAverageMark>
-@property (nonatomic,strong,readonly)NSString* name;
 @property (nonatomic,strong,readonly)NSMutableArray* students;
+@property (nonatomic,strong,readonly)NSString* name;
 -(id)initWithName:(NSString*)name;
 -(void)addStudent:(Student*)student;
 @end

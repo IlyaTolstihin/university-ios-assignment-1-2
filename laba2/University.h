@@ -11,6 +11,5 @@
 #import "ChangedMarkObserver.h"
 
 @interface University : NSObject <ChangedMarkObserver>
-@property (nonatomic,strong,readonly) NSMutableArray*  departments;
 +(University*)getInstance;
 @end

@@ -12,6 +12,6 @@
 
 @interface Student : Human <CalculateAverageMark>
 @property (nonatomic,strong,readonly)NSMutableArray* marks;
-@property (nonatomic,readwrite)int studentAverageMark;
+@property (nonatomic,readwrite)float averageMark;
 -(void)addMark:(NSNumber*)newMark;
 @end

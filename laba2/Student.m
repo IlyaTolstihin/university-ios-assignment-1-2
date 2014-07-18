@@ -15,11 +15,15 @@
 -(float)averageMark{
     int i = 0;
     float sum = 0;
-    for( i=0 ; i<[self.marks count] ; i++){
-        sum +=  (int)[self.marks objectAtIndex:i];
+    for(id mark in _marks){
+        sum += [mark intValue];
     }
-    self.studentAverageMark = (float)sum/i;
-    return self.averageMark;
+    if(!i){
+        _averageMark = 0;
+    }else{
+        _averageMark = sum/i;
+    }
+    return _averageMark;
 }
 -(void)addMark:(NSNumber*)newMark{
     [self.marks addObject:newMark];

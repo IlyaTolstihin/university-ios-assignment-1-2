@@ -11,5 +11,5 @@
 @interface Human : NSObject
 @property (nonatomic,readonly)int age;
 @property (nonatomic,strong,readonly)NSString* name;
--(id)initWithName:(NSString*)name andAge:(int)age;
+-(id)initWithName:(NSString*)name age:(int)age;
 @end

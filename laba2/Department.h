@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CalculateAverageMark.h"
-#import "Student.h"
+@protocol CalculateAverageMark;
+@class Student;
 #import "Group.h"
+#import "Teacher.h"
 
 @interface Department : NSObject <CalculateAverageMark>
 @property (nonatomic,strong,readonly)NSString* name;
--(void)addStudent:(Student*)student toGroup:(Group*)group;
+@property (nonatomic,strong,readonly)Teacher* departmentManager;
+@property (nonatomic,strong,readonly)NSMutableArray* groups;
+@property (nonatomic,strong,readonly)NSMutableArray* teachers;
 -(id)initWithName:(NSString*)name;
 @end

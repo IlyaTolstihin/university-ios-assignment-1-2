@@ -9,13 +9,18 @@
 #import "Group.h"
 
 @implementation Group
+@synthesize students = _students;
+-(NSMutableArray*)students{
+    if(!_students){
+        _students = [[NSMutableArray alloc]init];
+    }
+    return _students;
+}
 -(instancetype)initWithName:(NSString*)name{
     if( self = [super init] ){
         _name = name;
-        _students = [[NSMutableArray alloc]init];
-        return self;
     }
-    return nil;
+    return self;
 }
 -(void)addStudent:(Student *)student{
     [self.students addObject:student];
@@ -23,9 +28,13 @@
 -(float)averageMark{
     int i = 0;
     float sum = 0;
-    for(i=0 ; i < [self.students count] ; i++){
-        sum += [[self.students objectAtIndex:i] averageMark];
+    for(id student in _students){
+        sum += [student averageMark];
     }
-    return sum/i;
+    if(!i){
+        return 0.f;
+    }else{
+        return sum/i;
+    }
 }
 @end
